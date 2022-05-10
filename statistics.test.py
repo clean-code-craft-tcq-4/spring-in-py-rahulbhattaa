@@ -1,6 +1,22 @@
 import unittest
 import statistics
 
+Class emailAlert():
+  emailSent= False
+Class ledAlert():
+  ledGlows= False
+Class statsAlerter():
+  max_thres= None
+  def __init__(self,max_thres,destination):
+    self.max_thres=max_thres
+    self.destination= destination
+    
+  def CheckAndAlert(self,destination):
+    if max(destination)> self.max_thres:
+      self.destination[0].emailSent=True
+      self.destination[1].ledGlows= True
+
+
 class StatsTest(unittest.TestCase):
   def test_report_min_max_avg(self):
     computedStats = statistics.calculateStats([1.5, 8.9, 3.2, 4.5])
@@ -27,10 +43,6 @@ class StatsTest(unittest.TestCase):
     statsAlerter.checkAndAlert([22.6, 12.5, 3.7])
     self.assertTrue(emailAlert.emailSent)
     self.assertTrue(ledAlert.ledGlows)
-Class emailAlert():
-  emailSent=False
-Class ledAlert():
-  ledGlows=False
 
   
 
