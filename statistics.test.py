@@ -14,7 +14,7 @@ class StatsAlerter():
     self.max_thres=max_thres
     self.destination= destination
     
-  def CheckAndAlert(self,destination):
+  def checkAndAlert(self,destination):
     if max(destination)> self.max_thres:
       self.destination[0].emailSent=True
       self.destination[1].ledGlows= True
@@ -30,9 +30,9 @@ class StatsTest(unittest.TestCase):
 
   def test_avg_is_nan_for_empty_input(self):
     computedStats = statistics.calculateStats([])
-    self.assertTrue(math.isnan(computed_stats["average"]))
-    self.assertTrue(math.isnan(computed_stats["max"]))
-    self.assertTrue(math.isnan(computed_stats["min"]))
+    self.assertTrue(math.isnan(computedStats["average"]))
+    self.assertTrue(math.isnan(computedStats["max"]))
+    self.assertTrue(math.isnan(computedStats["min"]))
     # All fields of computedStats (average, max, min) must be
     # nan (not-a-number), as defined in the math package
     # Design the assert here.
