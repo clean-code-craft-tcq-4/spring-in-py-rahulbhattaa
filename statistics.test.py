@@ -2,7 +2,7 @@ import unittest
 import statistics
 import math
 
-class emailAlert:
+class EmailAlert:
   emailSent= False
   
 class LEDAlert:
