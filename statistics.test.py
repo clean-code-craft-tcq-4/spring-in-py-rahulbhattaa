@@ -2,11 +2,13 @@ import unittest
 import statistics
 import math
 
-Class emailAlert():
+class emailAlert:
   emailSent= False
-Class ledAlert():
+  
+class LEDAlert:
   ledGlows= False
-Class statsAlerter():
+  
+class statsAlerter():
   max_thres= None
   def __init__(self,max_thres,destination):
     self.max_thres=max_thres
